@@ -1,0 +1,96 @@
+<div class="editArticle"  ng-controller="editArticleController">
+
+	<form name="editArticle" class="form-horizontal" novalidate="novalidate" ng-submit="submit()">
+		<fieldset>
+			<div id="legend" class="">
+				<legend class="">editArticle</legend>
+			</div>
+			<div class="control-group">
+
+				<!-- Text input-->
+				<label class="control-label" for="input01">文章标题</label>
+				<div class="controls">
+					<input 
+						name="articleTitle"
+						ng-model="articleTitle" 
+						type="text"
+						placeholder="请输入文章标题"
+						class="input-xlarge"
+						required="required" >
+						{{ articleTitle }}
+					<p ng-show="editArticle.articleTitle.$dirty && editArticle.articleTitle.$invalid" class="help-block">标题为必选项</p>
+				</div>
+			</div>
+
+			<div class="control-group">
+
+				<!-- Text input-->
+				<label class="control-label" for="input01">文章类别</label>
+				<div class="controls">
+					<input
+						name="articleClassify"
+						ng-model="articleClassify"
+						type="text"
+						placeholder="类别如&quot;HTML&quot; &quot;JAVA&quot;"
+						class="input-xlarge"
+						required="required">
+						
+					<p ng-show="editArticle.articleClassify.$dirty && editArticle.articleClassify.$error.required" class="help-block">类别为必填项</p>
+				</div>
+			</div>
+			<div class="" has-permisson="edit">
+				没有编辑权限就不显示这行内容
+			</div>
+			<div class="control-group">
+
+				<!-- Textarea -->
+				<label class="control-label">文章摘要</label>
+				<div class="controls">
+					<div class="textarea">
+						<textarea 
+							rows="5"
+							cols="50"
+							name="articleAbstract"
+							ng-model="articleAbstract"
+							type=""
+							class=""> </textarea>
+					</div>
+				</div>
+			</div>
+
+			<div class="control-group">
+
+				<!-- Textarea -->
+				<label class="control-label">文章内容</label>
+				<div class="controls">
+					<div class="textarea">
+						<textarea
+							rows="15"
+							cols="100"
+							name="articleContent"
+							ng-model="articleContent" 
+							type="" 
+							class=""
+							required="required"> </textarea>
+							
+					<p ng-show="editArticle.articleContent.$dirty && editArticle.articleContent.$error.required" class="help-block">类别为必填项</p>
+							
+					</div>
+					
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label"></label>
+
+				<!-- Button -->
+				{{editArticle.$invalid}}
+				<div class="controls">
+					<button type="submit" class="btn btn-success"  ng-disabled="editArticle.$invalid">保存</button>
+				</div>
+			</div>
+
+		</fieldset>
+	</form>
+
+</div>

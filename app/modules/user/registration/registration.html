@@ -1,0 +1,141 @@
+
+		<style type="text/css">
+			.registwrap{
+				width: 425px;
+				
+				margin: 120px auto 0;
+			}
+			
+			span.error{
+				color: orange;
+				font-size: 13px;
+			}
+			.form-legend{
+				background: -webkit-linear-gradient(top, #4A515B 0%,#3C4049 100%);
+				border-radius: 5px;
+				padding: 12px 20px;
+				margin-bottom: 1em;
+				text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+				font-size: 16px;
+    			color: #FFF;
+			}
+			.form-content{
+			    padding: 20px;
+			    background: #FFF;
+			    border: 1px solid #DDD;
+			    border-radius: 5px;
+			    box-shadow: 0 0 6px rgba(0,0,0,.10);
+			}
+			.form-content label{
+				display: block;
+				color: #333;
+				margin-bottom: 5px;
+				font-size: 13px;	
+			}
+			.form-content #remember-me{
+				margin-top:10px;
+			}
+			.form-content #remember{
+				vertical-align: middle;
+				margin: 0;
+			}
+			.form-content #remember-label{
+				vertical-align: middle;
+			    display: inline-block;
+			    margin-bottom: 0;
+			    margin-left: 5px;
+			}
+		</style>
+	</head> 
+	
+		<div class="registwrap" ng-controller="registrationController">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12">
+						<form name="regist_form"
+							  ng-submit="submitForm()"
+							  novalidate="novalidate" >
+							  
+						<legend class="form-legend">
+							注册
+						</legend>
+						
+						<div class="form-content clearfix">
+							
+							<div class="form-group">
+								<label for="">用户名</label> 
+								<input type="text"
+									 name="userName"
+									 class="form-control" 
+									 ng-model="userDate.userName" 
+									 ng-minlength="3"
+									 ng-maxlength="20"
+									 ng-pattern="/^[a-zA-Z][a-zA-Z0-9_]*$/"
+									 required
+									 placeholder="用户名"/>
+								<div class="" 
+									ng-show="regist_form.userName.$dirty && regist_form.userName.$invalid">
+									
+									<span ng-show="regist_form.userName.$error.required" class="error">请填写用户名</span>
+									<span ng-show="regist_form.userName.$error.minlength || regist_form.userName.$error.maxlength" class="error">建议用户名在3到20位之间</span>
+									<span ng-show="regist_form.userName.$error.pattern" class="error">用户名格式错误</span>
+									
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="">密码</label> 
+								<input type="password"
+									 name="userPassword" 
+									 class="form-control"
+									 ng-model="userDate.userPassword" 
+									 ng-minlength="6"
+									 ng-maxlength="20"
+									 ng-pattern="/^(?![^a-zA-Z]+$)(?!\D+$).{8,20}$/"
+									 required
+									 placeholder="密码"/>
+									 
+								<div class="" 
+									ng-show="regist_form.userPassword.$dirty && regist_form.userPassword.$invalid">
+									
+									<span ng-show="regist_form.userPassword.$error.required" class="error">请填写密码</span>
+									<span ng-show="regist_form.userPassword.$error.minlength || regist_form.userPassword.$error.maxlength" class="error">建议密码在6到20位之间</span>
+									<span ng-show="regist_form.userPassword.$error.pattern" class="error">密码格式错误</span>
+									
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="">确认密码</label> 
+								<input type="password"
+									 name="userPasswordCopy"
+									 class="form-control"
+									 ng-model="userDate.userPasswordCopy" 
+									 required
+									 placeholder="确认密码" />
+								<div class="" 
+									ng-show="(regist_form.userPasswordCopy.$dirty && regist_form.userPasswordCopy.$invalid) || (userDate.userPasswordCopy && userDate.userPassword && (userDate.userPasswordCopy != userDate.userPassword))">
+									
+									<span ng-show="regist_form.userPasswordCopy.$error.required" class="error">请再次输入密码</span>
+									<span ng-show="userDate.userPasswordCopy != userDate.userPassword" class="error">两次密码输入不一致</span>
+									
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="pull-right">
+									<input type="submit"
+										 value="注册" 
+										 class="btn btn-warning"
+										 ng-disabled="regist_form.$invalid || (userDate.userPasswordCopy != userDate.userPassword)"
+										  />
+								</div>
+							</div>
+						</div>
+							
+						</form>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+

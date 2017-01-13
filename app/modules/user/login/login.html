@@ -1,0 +1,130 @@
+
+		<style type="text/css">
+			.loginwrap{
+				width: 425px;
+				
+				margin: 120px auto 0;
+			}
+			
+			span.error{
+				color: orange;
+				font-size: 13px;
+			}
+			.form-legend{
+				background: -webkit-linear-gradient(top, #4A515B 0%,#3C4049 100%);
+				border-radius: 5px;
+				padding: 12px 20px;
+				margin-bottom: 1em;
+				text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+				font-size: 16px;
+    			color: #FFF;
+			}
+			.form-content{
+			    padding: 20px;
+			    background: #FFF;
+			    border: 1px solid #DDD;
+			    border-radius: 5px;
+			    box-shadow: 0 0 6px rgba(0,0,0,.10);
+			}
+			.form-content label{
+				display: block;
+				color: #333;
+				margin-bottom: 5px;
+				font-size: 13px;	
+			}
+			.form-content #remember-me{
+				margin-top:10px;
+			}
+			.form-content #remember{
+				vertical-align: middle;
+				margin: 0;
+			}
+			.form-content #remember-label{
+				vertical-align: middle;
+			    display: inline-block;
+			    margin-bottom: 0;
+			    margin-left: 5px;
+			}
+		</style>
+		<div class="loginwrap">
+			<div class="container-flulid">
+				<div class="row">
+					<div class="col-sm-12">
+						<form name="login_form"
+							  ng-submit="login()"
+							  novalidate="novalidate" >
+							<legend class="form-legend">
+								登录
+							</legend>
+							<div class="form-content clearfix">
+								<div class="form-group">
+									<label for="">用户名</label> 
+									<input type="text"
+										 name="userName"
+										 class="form-control" 
+										 ng-model="userDate.userName" 
+										 ng-minlength="3"
+										 ng-maxlength="20"
+										 ng-pattern="/^[a-zA-Z][a-zA-Z0-9_]*$/"
+										 required
+										 placeholder="用户名"/>
+									<div class="" 
+										ng-show="login_form.userName.$dirty && login_form.userName.$invalid">
+										
+										<span ng-show="login_form.userName.$error.required" class="error">请填写用户名</span>
+										<span ng-show="login_form.userName.$error.minlength || login_form.userName.$error.maxlength" class="error">建议用户名在3到20位之间</span>
+										<span ng-show="login_form.userName.$error.pattern" class="error">用户名格式错误</span>
+										
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label for="">密码</label> 
+									<input type="password"
+										 name="userPassword" 
+										 class="form-control"
+										 ng-model="userDate.userPassword" 
+										 ng-minlength="6"
+										 ng-maxlength="20"
+										 ng-pattern="/^(?![^a-zA-Z]+$)(?!\D+$).{8,20}$/"
+										 required
+										 placeholder="密码"/>
+										 
+									<div class="" 
+										ng-show="login_form.userPassword.$dirty && login_form.userPassword.$invalid">
+										
+										<span ng-show="login_form.userPassword.$error.required" class="error">请填写密码</span>
+										<span ng-show="login_form.userPassword.$error.minlength || login_form.userPassword.$error.maxlength" class="error">建议密码在6到20位之间</span>
+										<span ng-show="login_form.userPassword.$error.pattern" class="error">密码格式错误</span>
+										
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<div id="remember-me" class="pull-left">
+										<input type="checkbox" name="remember" id="remember">
+										<label id="remember-label" for="remember">记住密码 </label>
+									</div>
+									<div class="pull-right">
+										<input type="submit"
+											 value="登录" 
+											 class="btn btn-warning"
+											 ng-disabled="login_form.$invalid"
+											  />
+									</div>
+									<input ng-click="nofound()" type="button"  name="" id="" value="bu" />
+									
+								</div>
+							</div>
+							
+							
+						</form>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+
+
+		</script>

@@ -1,0 +1,170 @@
+<style type="text/css">
+			.account-container{
+				display: table;
+			}
+			.account-avatar,.account-details{
+				display: table-cell;
+				vertical-align: top;
+			}
+			.account-avatar{
+				padding-right: 1em;
+			}
+			.account-avatar img{
+				width: 55px;
+				height: 55px;
+				display: block;
+				padding: 4px;
+				border-radius:4px;
+				line-height: 1;
+				border: 1px solid #ddd;
+				box-shadow: 0 1px 1px rgba(0,0,0,0.075);
+			}
+			.account-details span{
+				display: block;
+			}
+			.account-details .account-name{
+				font-size: 15px;
+    			font-weight: 600;
+			}
+			.account-details .account-role{
+				color: #888;
+			}
+			.account-details .account-actions{
+				color: #bbb;
+			}
+			.account-actions a{
+				color:#0088cc;
+				font-size:11px;
+			}
+			#main-nav.nav-tabs.nav-stacked > li{
+				margin-bottom: 4px;
+			}
+			#main-nav.nav-tabs.nav-stacked > li > a.active,
+			#main-nav.nav-tabs.nav-stacked > li > a:hover{
+				color: #FFF;
+			    background: #3C4049;
+			    background: -moz-linear-gradient(top, #4A515B 0%, #3C4049 100%);
+			    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4A515B), color-stop(100%,#3C4049));
+			    background: -webkit-linear-gradient(top, #4A515B 0%,#3C4049 100%);
+			    background: -o-linear-gradient(top, #4A515B 0%,#3C4049 100%);
+			    background: -ms-linear-gradient(top, #4A515B 0%,#3C4049 100%);
+			    background: linear-gradient(top, #4A515B 0%,#3C4049 100%);
+			    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4A515B', endColorstr='#3C4049');
+			    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#4A515B', endColorstr='#3C4049')";
+			    border-color: #2B2E33;
+			}
+			#main-nav.nav-tabs.nav-stacked > li > a{
+				    padding: 10px 8px;
+			    font-size: 12px;
+			    font-weight: 600;
+			    color: #4A515B;
+			    background: #E9E9E9;
+			    background: -moz-linear-gradient(top, #FAFAFA 0%, #E9E9E9 100%);
+			    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FAFAFA), color-stop(100%,#E9E9E9));
+			    background: -webkit-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+			    background: -o-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+			    background: -ms-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+			    background: linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+			    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#E9E9E9');
+			    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#E9E9E9')";
+			    border: 1px solid #D5D5D5;
+			    border-radius: 4px;
+			}
+			ul,li{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+		</style>
+<div class="container">
+	<div class="row">
+			<div class="col-lg-3">
+				<div class="account-container">
+					<div class="account-avatar">
+						<img src="../../../static/img/headshot.png" alt=""/>
+					</div>
+					<div class="account-details">
+						<span class="account-name">Rod Howard</span>
+					
+						<span class="account-role">Administrator</span>
+						
+						<span class="account-actions">
+							<a href="javascript:;">Profile</a> |
+							
+							<a href="javascript:;">Edit Settings</a>
+						</span>
+					</div>
+				</div>
+				<hr />
+				<ul id="main-nav" class="nav nav-tabs nav-stacked">
+					<li>
+						<a ui-sref="account.profile">
+							<i class="icon-pushpin"></i>
+							个人信息
+						</a>
+					</li>
+					<li>
+						<a ui-sref="account.editarticle">
+							<i class="icon-pushpin"></i>
+							文章
+						</a>
+					</li>
+					<li>
+						<a ui-sref="account.editarticle">
+							<i class="icon-home"></i>
+							文章上传		
+						</a>
+					</li>
+					
+					<li>
+						<a href="./faq.html">
+							<i class="icon-pushpin"></i>
+							FAQ	
+						</a>
+					</li>
+					
+					<li>
+						<a href="./plans.html">
+							<i class="icon-th-list"></i>
+							Pricing Plans		
+						</a>
+					</li>
+					
+					<li class="active">
+						<a href="./grid.html">
+							<i class="icon-th-large"></i>
+							Grid Layout	
+							<span class="label label-warning pull-right">5</span>
+						</a>
+					</li>
+					
+					<li>
+						<a href="./charts.html">
+							<i class="icon-signal"></i>
+							Charts	
+						</a>
+					</li>
+					
+					<li>
+						<a href="">
+							<i class="icon-user"></i>
+							User Account							
+						</a>
+					</li>
+					
+					<li>
+						<a href="./login.html">
+							<i class="icon-lock"></i>
+							Login	
+						</a>
+					</li>
+					
+				</ul>
+				
+			</div>
+		<div class="col-lg-9" ui-view="account_content" >
+			
+		</div>
+	</div>
+	
+</div>

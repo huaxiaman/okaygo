@@ -1,0 +1,350 @@
+<style type="text/css">
+	.articel_box{
+		position: relative;
+		box-sizing: border-box;
+		overflow: hidden;
+		height: 172px;
+	}
+	.articel_img{
+		width: 100%;
+	}
+	/*//147.5*/
+	.articel_intro{
+		    box-sizing: border-box;
+		    position: absolute;
+		    padding: 0 20px;
+		    transition: top .5s;
+		    top: 65px;
+		    height: 144px;
+		    width: 100%;
+		    background-image: url(./static/img/bg-course.png);
+		    background-size: cover;
+	}
+	.articel_intro:hover{
+		top: 47.5px;
+	}
+	.articel_intro h3{
+		box-sizing: content-box;
+		margin: 0;
+	    padding: 15px 0 5px;
+	    font-size: 14px;
+	    height: 40px;
+	    overflow: hidden;
+	    color: #07111b;
+	    line-height: 21px;
+	}
+	.articel_intro p{
+		color: #93999f;
+	    font-size: 12px;
+	    height: 40px;
+	    overflow: hidden;
+	    line-height: 20px;
+	}
+	.articel_bottom{
+		position: absolute;
+	    padding: 0 20px;
+	    bottom: 0;
+	    box-sizing: border-box;
+	    width: 100%;
+	    height: 42px;
+	    background-color: #fff;
+	    color: #93999f;
+	    font-size: 12px;
+	    line-height: 36px;
+	}
+	.recommend-kind{
+		line-height: 16px;
+	    font-size: 16px;
+	    color: #07111b;
+	    margin-top: 42px;
+	    margin-bottom: 24px;
+	}
+	.recommends{
+		background: #fff;
+	}
+	.col-xs-8{
+		width: 60%;
+	}
+	.col-xs-3{
+		width: 20%;
+	}
+	.programmer-classify{
+		background-image: url(./static/img/Web.png);
+    	position: relative;
+    	height: 364px;
+	}
+	.programmer-classify .programmer-title{
+		margin: 30px 0 0 20px;
+	    line-height: 36px;
+	    font-family: "微软雅黑";
+	    font-weight: 700;
+		font-size: 32px;
+	    color: #fff;
+	}
+	.programmer-classify .programmer-path{
+		    display: block;
+    		margin: 34px 0 0 20px;
+	}
+	.programmer-classify .programmer-raise{
+		position: absolute;
+	    bottom: 16px;
+	    margin-left: 20px;
+	}
+	.longer{
+		background-image: url(./static/img/longer.jpg);
+	    height: 172px;
+	    font-size: 20px;
+	    color: #fff;
+	    font-weight: 700;
+	    text-align: center;
+	    line-height: 172px;
+	    overflow: hidden;
+	}
+	.programmers .col-sm-4,
+	.programmers .col-sm-8,
+	.programmers .col-xs-3,
+	.programmers .col-xs-6,
+	.programmers .col-xs-8{
+		padding: 0;
+		
+	}
+	.articel_box{
+		display: block;
+		height: 172px;
+		overflow: hidden;
+	}
+	.programmers .col-sm-4>div,
+	.programmers .col-sm-8>div,
+	.programmers .col-xs-3>div,
+	.programmers .col-xs-6>div,
+	.programmers .col-xs-8>div{
+	}
+	.programmer-classify,
+	.articel_box,
+	.longer{
+		margin: 15px 15px 0 0;
+	}
+	.myrow{
+		margin: 0;
+	}
+	.programmers{
+		background: #d7d7d7;
+	}
+	.biger{
+   		 height: 364px;
+   		 margin: 15px 15px 0 0;
+   		 background-image: url(./static/img/biger.jpg);
+	}
+	
+	
+	.programmer-title{
+		
+		
+	}
+</style>
+
+<!-- 各类猿 -->
+<div class="programmers" ng-controller="programmersController">
+	
+	<div class="container">
+		<div class="row" >
+			<div class="col-xs-3">
+				
+			
+				<div class="programmer-classify clearfix"> 
+					<p class="programmer-title">{{programers[0].programer.name}}<br>工程师</p>  
+					<a class="programmer-path" ng-href="{{programers[0].programer.career}}" target="_blank"> {{programers[0].programer.des}}</a>           
+					<div class="programmer-path">            
+						<a ng-repeat="re in programers[0].programer.res" target="_blank" ng-href="{{re.href}}" class="item">{{re.des}}</a>   
+					</div>   
+				</div>
+				
+			</div>
+			<div class="col-xs-8">
+				<div class="container-fluid">
+					<div class="row myrow">
+						<div class="col-sm-8">
+							
+							<div class="longer" >
+								<a ng-href="{{ programers[0].longer[0].href }}">{{ programers[0].longer[0].des }}</a>
+							</div>
+							
+						</div>
+						<div class="col-sm-4">
+							
+							<a ng-href="{{ programers[0].short[0].href }}" class="box">
+								<div class="articel_box">
+									<img class="articel_img" ng-src="./static/img/mean1.jpg"/>
+									<div class="articel_intro">
+										<h3>{{ programers[0].short[0].title }}</h3>
+										<p>{{ programers[0].short[0].des }}</p>
+									</div>
+									<div class="articel_bottom">
+										<span id="">
+											{{ programers[0].short[0].author }}
+										</span>
+										<span id="ss">
+											{{ programers[0].short[0].date }}
+										</span>
+									</div>
+								</div>
+							</a>
+							
+						</div>
+					</div>
+					<div class="row myrow">
+						<div class="col-sm-8">
+							
+							<div class="longer" >
+								<a ng-href="{{ programers[0].longer[1].href }}">{{ programers[0].longer[1].des }}</a>
+							</div>
+							
+						</div>
+						<div class="col-sm-4">
+							
+							<a ng-href="{{ programers[0].short[1].href }}" class="box">
+								<div class="articel_box">
+									<img class="articel_img" ng-src="./static/img/mean1.jpg"/>
+									<div class="articel_intro">
+										<h3>{{ programers[0].short[1].title }}</h3>
+										<p>{{ programers[0].short[1].des }}</p>
+									</div>
+									<div class="articel_bottom">
+										<span id="">
+											{{ programers[0].short[1].author }}
+										</span>
+										<span id="ss">
+											{{ programers[0].short[1].date }}
+										</span>
+									</div>
+								</div>
+							</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				
+ 				<a ng-href="{{ programers[0].short[2].href }}" class="box">
+					<div class="articel_box">
+						<img class="articel_img" ng-src="./static/img/mean1.jpg"/>
+						<div class="articel_intro">
+							<h3>{{ programers[0].short[2].title }}</h3>
+							<p>{{ programers[0].short[2].des }}</p>
+						</div>
+						<div class="articel_bottom">
+							<span id="">
+								{{ programers[0].short[2].author }}
+							</span>
+							<span id="ss">
+								{{ programers[0].short[2].date }}
+							</span>
+						</div>
+					</div>
+				</a>
+				
+				<div class="" style="background: #fff;">
+					<ul>
+						<li ng-repeat="li in programers[0].list"><a ng-href="{{li.href}}">{{li.des}}</a></li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">
+				
+				<div class="programmer-classify clearfix"> 
+					<p class="programmer-title">{{programers[1].programer.name}}<br>工程师</p>  
+					<a class="programmer-path" ng-href="{{programers[1].programer.career}}" target="_blank"> {{programers[1].programer.des}}</a>           
+					<div class="programmer-raise">            
+						<a ng-repeat="re in programers[1].programer.res" target="_blank" ng-href="{{re.href}}" class="item">{{re.des}}</a>   
+					</div>   
+				</div>
+				
+			</div>
+			<div class="col-xs-8">
+				<div class="container-fluid">
+					<div class="row myrow">
+						<div class="col-sm-8">
+							
+							<a target="_blank"  >    
+								<div class="biger" > 
+									<p class="title">一位合格PHPer从这里下手!</p>           
+									   <div class="line"></div>                         
+									<div class="subtitle">详解语法基础、框架应用…</div>                  
+								</div>                
+							</a>
+							
+						</div>
+						<div class="col-sm-4">
+							
+							<a ng-href="{{ programers[1].short[0].href }}" class="box">
+								<div class="articel_box">
+									<img class="articel_img" ng-src="./static/img/mean1.jpg"/>
+									<div class="articel_intro">
+										<h3>{{ programers[1].short[0].title }}</h3>
+										<p>{{ programers[1].short[0].des }}</p>
+									</div>
+									<div class="articel_bottom">
+										<span id="">
+											{{ programers[1].short[0].author }}
+										</span>
+										<span id="ss">
+											{{ programers[1].short[0].date }}
+										</span>
+									</div>
+								</div>
+							</a>
+							<a ng-href="{{ programers[1].short[1].href }}" class="box">
+								<div class="articel_box">
+									<img class="articel_img" ng-src="../static/img/mean1.jpg"/>
+									<div class="articel_intro">
+										<h3>{{ programers[1].short[1].title }}</h3>
+										<p>{{ programers[1].short[1].des }}</p>
+									</div>
+									<div class="articel_bottom">
+										<span id="">
+											{{ programers[1].short[1].author }}
+										</span>
+										<span id="ss">
+											{{ programers[1].short[1].date }}
+										</span>
+									</div>
+								</div>
+							</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				
+ 				<a ng-href="{{ programers[1].short[2].href }}" class="box">
+					<div class="articel_box">
+						<img class="articel_img" ng-src="./static/img/mean1.jpg"/>
+						<div class="articel_intro">
+							<h3>{{ programers[1].short[2].title }}</h3>
+							<p>{{ programers[1].short[2].des }}</p>
+						</div>
+						<div class="articel_bottom">
+							<span id="">
+								{{ programers[1].short[2].author }}
+							</span>
+							<span id="ss">
+								{{ programers[1].short[2].date }}
+							</span>
+						</div>
+					</div>
+				</a>
+				<div class="" style="background: #fff;">
+					<ul>
+						<li ng-repeat="li in programers[1].list"><a ng-href="{{li.href}}">{{li.des}}</a></li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,100 @@
+<style type="text/css">
+	.list {
+		background: #bbb;
+	}
+	.list-item{
+		
+		overflow: hidden;
+		padding: 15px;
+		margin-bottom: 20px;
+		background: #fff;
+	}
+	.list-thumb {
+		vertical-align: top;
+		
+		display: inline-block;
+		width: 20%;
+		
+	}
+	.list-thumb img{
+		width: 100%;
+	}
+	.list-content{
+		vertical-align: top;
+		display: inline-block;
+		box-sizing: border-box;
+		width: 79%;
+		padding-left: 15px;
+	}
+	.articleTitle{
+		margin: 0;
+		font-size: 16px;
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+	.articleMate{
+		font-size: 12px;
+		line-height: 1;
+		margin-bottom: 10px;
+	}
+	.articleAuthor{
+		margin-right: 100px;
+	}
+	.articleAbstract{
+		margin: 0;
+		line-height: 1.5;
+		font-size: 12px;
+		height: 3em;
+		overflow: hidden;
+		color: #888888;
+		margin-bottom: 5px;
+	}
+	.articleClassify span{
+		display: inline-block;
+		padding: 1px 7px;
+		border-radius: 5px;
+		color: #fff;
+		background: #888;
+		font-size: 12px;
+		font-weight: bold;
+		margin-right: 10px;
+	}
+</style>
+<div class="list">
+	
+	<div class="container" >
+		<div class="row">
+			<div class="col-lg-4">
+			</div>
+			<div class="col-lg-8">
+				<ul>
+					<li ng-repeat="article in articles">
+						<a href="">
+							<div class="list-item">
+								<div class="list-thumb">
+									<img src="/static/img/biger.jpg"/>
+								</div>
+								<div class="list-content">
+									<h3 class="articleTitle">{{article.articleTitle}}</h3>
+									<div class="articleMate">
+										<span class="articleAuthor">{{article.articleAuthor}}</span>
+										<span class="publishDate">{{article.publishDate}}</span>
+									</div>
+									<p class="articleAbstract">
+										{{article.articleAbstract}}
+									</p>
+									
+									<div class="articleClassify"><span>{{article.articleClassify}}</span></div>
+								</div>
+							</div>
+						</a>
+						
+						
+					</li>
+				</ul>
+				
+				
+			</div>
+		</div>
+	</div>
+</div>
